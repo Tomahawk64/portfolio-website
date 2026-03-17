@@ -1,0 +1,64 @@
+{
+  "name": "Prince Kushwaha",
+  "title": "Full Stack Developer",
+  "email": "princekkushwaha@outlook.com",
+  "phone": "+91-9999631770",
+  "location": "New Delhi, India",
+  "linkedin": "https://linkedin.com/in/prince-kushwaha",
+  "github": "https://github.com/prince-kushwaha",
+  "summary": "Passionate Full Stack Developer with hands-on experience building scalable web applications and SaaS platforms. Proficient in React, Next.js, Node.js, and cloud infrastructure. Experienced in end-to-end development — from UI design to database architecture and server deployment on AWS and Hostinger VPS. Keen interest in Machine Learning and data-driven applications.",
+  "education": [
+    {
+      "institution": "IILM College of Engineering & Technology",
+      "degree": "B.Tech (Bachelor of Technology)",
+      "field": "Computer Science & Engineering",
+      "period": "2021 – 2025",
+      "location": "Greater Noida, India"
+    }
+  ],
+  "experience": [
+    {
+      "company": "Reddington Global Consultancy",
+      "role": "Full Stack Developer",
+      "period": "Jun 2025 – Present",
+      "location": "New Delhi, India",
+      "type": "Full-time",
+      "responsibilities": [
+        "Designed and built the company website and multiple client-facing web platforms using Next.js, React, and Tailwind CSS.",
+        "Developed RESTful APIs using Node.js and Express, integrated with MongoDB Atlas for data persistence.",
+        "set up and managed cloud infrastructure on AWS EC2 and S3, and Hostinger VPS with Nginx and PM2.",
+        "Implemented the RG Care NGO platform with donation workflows and lead capture forms.",
+        "Built the RG US Debt website targeting international audiences with optimized SEO and multi-language support.",
+        "Developed a Lead Management System (LMS) for internal CRM with role-based access control.",
+        "Collaborated with stakeholders to define requirements, design UI/UX, and deliver solutions iteratively."
+      ]
+    },
+    {
+      "company": "Skolar",
+      "role": "Machine Learning with Data Science Intern",
+      "period": "2023 (92 days)",
+      "location": "Remote",
+      "type": "Internship",
+      "responsibilities": [
+        "Completed a 92-day intensive internship focused on Machine Learning and Data Science.",
+        "Worked on supervised and unsupervised learning models using Python, scikit-learn, and pandas.",
+        "Built and evaluated classification and regression pipelines on real-world datasets.",
+        "Developed data visualizations using Matplotlib and Seaborn to communicate insights."
+      ]
+    }
+  ],
+  "skills": {
+    "frontend": ["React", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS", "HTML5", "CSS3"],
+    "backend": ["Node.js", "Express.js", "Python", "FastAPI", "REST APIs"],
+    "database": ["MongoDB Atlas", "MySQL"],
+    "devops": ["AWS EC2", "AWS S3", "Hostinger VPS", "Nginx", "PM2", "Git", "GitHub"],
+    "tools": ["VS Code", "Postman", "Figma", "Linux CLI"]
+  },
+  "certifications": [
+    {
+      "name": "Machine Learning with Data Science",
+      "issuer": "Skolar",
+      "year": "2023"
+    }
+  ]
+}

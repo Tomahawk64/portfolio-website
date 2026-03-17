@@ -1,0 +1,110 @@
+[
+  {
+    "id": "rg-consultancy-website",
+    "title": "RG Consultancy Website",
+    "slug": "rg-consultancy-website",
+    "shortDescription": "Corporate website for Reddington Global Consultancy with modern UI, service showcases, and lead capture.",
+    "description": "Built a full-featured corporate website for Reddington Global Consultancy. The platform includes a dynamic service showcase, team profiles, client testimonials, and an integrated lead capture form connected to a CRM backend. Deployed on Hostinger VPS with Nginx reverse proxy and PM2 process management.",
+    "techStack": ["Next.js", "React", "Tailwind CSS", "Node.js", "Express", "MongoDB Atlas", "Nginx", "PM2"],
+    "category": "Full Stack",
+    "featured": true,
+    "liveUrl": "#",
+    "githubUrl": "#",
+    "images": [
+      "/images/projects/rg-consultancy/cover.png",
+      "/images/projects/rg-consultancy/screen1.png"
+    ],
+    "metrics": [
+      "Reduced page load time by 40% using Next.js SSG",
+      "Increased lead capture by 25% after form optimization",
+      "Deployed on VPS with 99.9% uptime"
+    ],
+    "highlights": [
+      "Next.js App Router with SSG/SSR for optimal SEO",
+      "Custom CMS-like admin panel for content management",
+      "REST API with input validation and rate limiting",
+      "Responsive mobile-first design"
+    ]
+  },
+  {
+    "id": "rg-care-ngo",
+    "title": "RG Care (NGO Platform)",
+    "slug": "rg-care-ngo",
+    "shortDescription": "NGO web platform for Reddington Care with donation workflows, volunteer registration, and impact tracking.",
+    "description": "Developed the RG Care NGO platform to support charitable initiatives. Features include donation workflows, volunteer registration, campaign management, and impact metric dashboards. The platform integrates payment gateways and sends automated email confirmations for donations.",
+    "techStack": ["Next.js", "React", "Tailwind CSS", "Node.js", "MongoDB Atlas", "Nodemailer"],
+    "category": "Full Stack",
+    "featured": true,
+    "liveUrl": "#",
+    "githubUrl": "#",
+    "images": [
+      "/images/projects/rg-care/cover.png",
+      "/images/projects/rg-care/screen1.png"
+    ],
+    "metrics": [
+      "Processed 100+ donation transactions in launch month",
+      "50+ volunteer registrations within first week",
+      "Email automation reduced manual follow-up by 80%"
+    ],
+    "highlights": [
+      "Secure donation workflow with transaction logging",
+      "Volunteer registration and management system",
+      "Automated email confirmations via Nodemailer",
+      "Impact dashboard with real-time statistics"
+    ]
+  },
+  {
+    "id": "rg-us-debt-website",
+    "title": "RG US Debt Website",
+    "slug": "rg-us-debt-website",
+    "shortDescription": "Targeted US audience debt relief service website with SEO optimization and multi-region lead capture.",
+    "description": "Built a high-performance website for RG's US debt relief services targeting international audiences. Focused on SEO optimization, fast loading, and conversion-optimized landing pages. Includes multi-step lead capture forms, legal disclaimer management, and integrated analytics.",
+    "techStack": ["Next.js", "React", "Tailwind CSS", "Node.js", "MongoDB Atlas", "AWS S3", "AWS EC2"],
+    "category": "Full Stack",
+    "featured": true,
+    "liveUrl": "#",
+    "githubUrl": "#",
+    "images": [
+      "/images/projects/rg-us-debt/cover.png",
+      "/images/projects/rg-us-debt/screen1.png"
+    ],
+    "metrics": [
+      "Achieved 90+ Lighthouse SEO score",
+      "Multi-step form increased conversion rate by 35%",
+      "Deployed on AWS EC2 with CloudFront CDN"
+    ],
+    "highlights": [
+      "Optimized for Google Core Web Vitals",
+      "Multi-step lead capture with form validation",
+      "Dynamic meta tags for international SEO",
+      "Legal disclaimer and compliance management"
+    ]
+  },
+  {
+    "id": "lead-management-system",
+    "title": "Lead Management System (LMS)",
+    "slug": "lead-management-system",
+    "shortDescription": "Internal CRM with role-based access control, pipeline management, and automated lead assignment.",
+    "description": "Designed and developed an internal Lead Management System (LMS) for Reddington Global Consultancy. The system features role-based access control (admin, manager, agent), lead pipeline visualization, automated assignment rules, activity logging, and reporting dashboards. Built with a RESTful API backend and a React frontend.",
+    "techStack": ["React", "Next.js", "Node.js", "Express", "MongoDB Atlas", "Tailwind CSS", "JWT"],
+    "category": "Full Stack",
+    "featured": true,
+    "liveUrl": "#",
+    "githubUrl": "#",
+    "images": [
+      "/images/projects/lms/cover.png",
+      "/images/projects/lms/screen1.png"
+    ],
+    "metrics": [
+      "Manages 500+ leads per month",
+      "Reduced lead response time by 60%",
+      "Role-based access for 3 user tiers"
+    ],
+    "highlights": [
+      "Role-based access control (Admin/Manager/Agent)",
+      "Lead pipeline with Kanban-style board",
+      "Automated lead assignment and notifications",
+      "Activity logs and performance reporting dashboard"
+    ]
+  }
+]
