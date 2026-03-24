@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion, useScroll, useTransform, Variants, useSpring, useInView } from "framer-motion";
-import { ArrowRight, Download, Link2, Github, Mail, Phone, MapPin, Send, Award, Briefcase, GraduationCap, Code2, ChevronDown } from "lucide-react";
+import { ArrowRight, Link2, Github, Mail, Phone, MapPin, Send, Award, Briefcase, GraduationCap, Code2, ChevronDown } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import resumeData from "@/data/resume.json";
@@ -12,11 +12,6 @@ import projectsData from "@/data/projects.json";
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 60 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.25, 0.1, 0.25, 1] } }
-};
-
-const fadeIn: Variants = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { duration: 0.6 } }
 };
 
 const scaleIn: Variants = {
@@ -60,22 +55,35 @@ function AnimatedText({ text, className, once = true }: { text: string; classNam
 }
 
 function MagneticButton({ children, className, href, onClick, download, type, disabled }: any) {
-  const ref = useRef<any>(null);
+  const ref = useRef<HTMLElement>(null);
   const [pos, setPos] = useState({ x: 0, y: 0 });
+  
   const handleMouse = (e: React.MouseEvent) => {
     if (!ref.current) return;
     const { clientX, clientY } = e;
     const { height, width, left, top } = ref.current.getBoundingClientRect();
     setPos({ x: (clientX - (left + width / 2)) * 0.15, y: (clientY - (top + height / 2)) * 0.15 });
   };
+  
   const reset = () => setPos({ x: 0, y: 0 });
   const Comp = href ? motion.a : motion.button;
+
   return (
-    <Comp ref={ref} href={href} onClick={onClick} download={download} type={type} disabled={disabled}
-      onMouseMove={handleMouse} onMouseLeave={reset}
+    <Comp 
+      ref={ref as any} 
+      href={href} 
+      onClick={onClick} 
+      download={download} 
+      type={type} 
+      disabled={disabled}
+      onMouseMove={handleMouse} 
+      onMouseLeave={reset}
       animate={{ x: pos.x, y: pos.y }}
       transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
-      className={className}>{children}</Comp>
+      className={className}
+    >
+      {children}
+    </Comp>
   );
 }
 
@@ -136,7 +144,6 @@ export default function Home() {
     if (formData.honeypot) return;
     setStatus("loading");
     try {
-      // Replace these with your actual EmailJS credentials
       await emailjs.sendForm(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "YOUR_SERVICE_ID",
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "YOUR_TEMPLATE_ID",
@@ -480,10 +487,10 @@ export default function Home() {
                 <div className="h-px w-12 bg-primary-500" />
               </div>
               <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-4 text-gray-900 dark:text-white">
-                <AnimatedText text="Let's Connect" />
+                <AnimatedText text="Let&apos;s Connect" />
               </h2>
               <p className="text-lg text-gray-500 dark:text-gray-400 font-light max-w-xl mx-auto">
-                Have a project in mind or want to discuss opportunities? I'd love to hear from you.
+                Have a project in mind or want to discuss opportunities? I&apos;d love to hear from you.
               </p>
             </motion.div>
 
@@ -495,7 +502,7 @@ export default function Home() {
                 {/* Contact Info */}
                 <div className="lg:col-span-2 space-y-8">
                   <h3 className="text-3xl font-bold text-gray-900 dark:text-white">Get in Touch</h3>
-                  <p className="text-gray-500 dark:text-gray-400">Fill out the form and I'll respond within 24 hours. Auto-reply is enabled.</p>
+                  <p className="text-gray-500 dark:text-gray-400">Fill out the form and I&apos;ll respond within 24 hours. Auto-reply is enabled.</p>
 
                   {[
                     { icon: Mail, label: "Email", value: resumeData.basics.email, href: `mailto:${resumeData.basics.email}` },
