@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio Website
 
-## Getting Started
+A complete, production-ready portfolio website built with Next.js (TypeScript), Tailwind CSS, Framer Motion, and MongoDB Atlas.
 
-First, run the development server:
+## Prerequisites
 
+- Node.js (v18+)
+- MongoDB Atlas account/URI
+- SMTP / Email provider credentials (e.g., SendGrid, Gmail app passwords)
+
+## Local Development Instructions
+
+1. **Install Dependencies**
+   ```bash
+   npm install
+   ```
+
+2. **Environment Variables**
+   Create a `.env.local` file in the root directory by copying `.env.local.example` and fill in your credentials:
+   ```env
+   MONGODB_URI=your_mongodb_connection_string
+   SMTP_HOST=your_smtp_host
+   SMTP_PORT=587
+   SMTP_USER=your_smtp_username
+   SMTP_PASS=your_smtp_password
+   NEXT_PUBLIC_SITE_URL=http://localhost:3000
+   ```
+
+3. **Run Development Server**
+   ```bash
+   npm run dev
+   ```
+   Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+4. **Production Build & Local Start**
+   To test the production build locally:
+   ```bash
+   npm run build
+   npm run start
+   ```
+
+## Customizing Content
+
+### 1. Resume Data (`src/data/resume.json`)
+Update `src/data/resume.json` to change the personal details, education, experience, and skills displayed on the About, Experience, and Skills pages.
+
+### 2. Projects Data (`src/data/projects.json`)
+Edit `src/data/projects.json` to manage the projects shown on the Projects page. Add or remove array items as needed.
+
+### 3. Images and Assets
+- **Project Images**: Replace the placeholder image paths (e.g., `/images/projects/rg-consultancy.jpg`) in `projects.json` by adding your own images inside the `public/images/projects` directory.
+- **Resume PDF**: Replace `public/resume.pdf` with your actual CV document so the download buttons work correctly.
+- **Favicon**: Replace `public/favicon.ico` with your brand's icon.
+
+### 4. Optional: Seed Script
+To test the Database connection locally and add a dummy contact entry, you can run:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+node scripts/seed-contact-sample.js
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+(Ensure `.env.local` variables are set correctly before running).

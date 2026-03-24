@@ -1,0 +1,58 @@
+[
+  {
+    "id": "rg-consultancy",
+    "title": "RG Consultancy Website",
+    "description": "Corporate website for Reddington Global Consultancy featuring dynamic content, service showcases, SEO-optimized pages, and a modern aesthetic with Framer Motion animations.",
+    "techStack": ["Next.js", "Tailwind CSS", "Framer Motion", "MongoDB"],
+    "liveLink": "#",
+    "githubLink": "#",
+    "image": "/images/projects/rg-consultancy.png",
+    "caseStudy": {
+      "problem": "The firm needed a modern, performant web presence to attract enterprise clients and establish credibility in the consulting space.",
+      "solution": "Built a static site generated multi-page application using Next.js with ISR, improving loading times by 40% and achieving perfect Lighthouse scores.",
+      "metrics": ["40% faster load time", "100/100 Lighthouse", "SEO-optimized", "Mobile responsive"]
+    }
+  },
+  {
+    "id": "rg-care",
+    "title": "RG Care (NGO Platform)",
+    "description": "Full-featured donation and volunteer management platform for the RG Care non-profit organization, with secure payment processing, real-time dashboards, and transparent expense tracking.",
+    "techStack": ["React", "Node.js", "Express", "MongoDB", "Stripe"],
+    "liveLink": "#",
+    "githubLink": "#",
+    "image": "/images/projects/rg-care.png",
+    "caseStudy": {
+      "problem": "Inefficient tracking of volunteer hours, donations, and organizational expenses across multiple spreadsheets.",
+      "solution": "Created a centralized dashboard with automated reports, secure Stripe payment gateways, and volunteer management tools.",
+      "metrics": ["$50k+ donations", "200+ volunteers", "Real-time reports", "Secure payments"]
+    }
+  },
+  {
+    "id": "rg-us-debt",
+    "title": "RG US Debt Advisory",
+    "description": "Financial advisory portal offering intelligent debt management solutions for US clients, featuring complex calculator APIs powered by Python/FastAPI and consumed by a responsive Next.js frontend.",
+    "techStack": ["Next.js", "TypeScript", "Tailwind CSS", "FastAPI", "Python"],
+    "liveLink": "#",
+    "githubLink": "#",
+    "image": "/images/projects/rg-us-debt.png",
+    "caseStudy": {
+      "problem": "Clients needed an intuitive simulator to restructure their debts and visualize repayment plans before committing.",
+      "solution": "Developed complex Python-based financial calculator APIs exposed via FastAPI with sub-200ms response times, consumed by a sleek Next.js frontend.",
+      "metrics": ["<200ms calculations", "50+ active clients", "99.9% uptime", "Real-time plans"]
+    }
+  },
+  {
+    "id": "lms",
+    "title": "Lead Management System",
+    "description": "Enterprise-grade internal CRM tool optimized for tele-calling teams, improving conversion rates by tracking leads through customizable Kanban-style pipelines with real-time notifications.",
+    "techStack": ["React", "Express", "MySQL", "AWS EC2", "Nginx", "PM2"],
+    "liveLink": "#",
+    "githubLink": "#",
+    "image": "/images/projects/lms.png",
+    "caseStudy": {
+      "problem": "Sales team was losing track of potential leads due to fragmented spreadsheet workflows and no standardized follow-up process.",
+      "solution": "Deployed a robust CRM on AWS EC2 with Nginx reverse proxy, integrating real-time notifications, role-based access, and a scalable MySQL schema.",
+      "metrics": ["25% more conversions", "Zero downtime", "Role-based access", "Real-time alerts"]
+    }
+  }
+]

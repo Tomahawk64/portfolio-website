@@ -1,0 +1,77 @@
+{
+  "basics": {
+    "name": "Prince Kushwaha",
+    "title": "Full Stack Developer",
+    "phone": "+91-9999631770",
+    "email": "princekkushwaha@outlook.com",
+    "location": "New Delhi, India",
+    "website": "https://princekushwaha.dev",
+    "summary": "Results-driven Full Stack Developer with hands-on experience building scalable, production-grade web applications. Proficient across the entire stack — from crafting pixel-perfect React/Next.js frontends to architecting robust Node.js & Python backends deployed on AWS. Passionate about clean code, performance optimization, and delivering impactful digital products that solve real-world problems.",
+    "highlights": [
+      "4+ production web applications deployed and maintained",
+      "Experience with React, Next.js, Node.js, Python, FastAPI",
+      "AWS cloud infrastructure (EC2, S3, VPS hosting)",
+      "MongoDB Atlas & MySQL database design",
+      "Framer Motion & Tailwind CSS for modern UIs"
+    ]
+  },
+  "education": [
+    {
+      "institution": "IILM College of Engineering & Technology",
+      "degree": "B.Tech in Computer Science",
+      "startDate": "2021",
+      "endDate": "2025",
+      "description": "Focused on Data Structures, Algorithms, Web Technologies, Machine Learning, and Software Engineering."
+    }
+  ],
+  "experience": [
+    {
+      "company": "Reddington Global Consultancy",
+      "role": "Full Stack Developer",
+      "startDate": "Jun 2025",
+      "endDate": "Present",
+      "description": "Spearheading full-stack development for multiple client projects, from ideation to deployment. Building scalable web platforms with Next.js, React, Node.js, and Python, deployed on AWS infrastructure with zero-downtime CI/CD pipelines.",
+      "achievements": [
+        "Architected & deployed RG Consultancy corporate website with 100/100 Lighthouse score",
+        "Built RG Care NGO platform processing $50k+ in donations with 200+ active volunteers",
+        "Developed RG US Debt financial advisory portal with FastAPI-powered calculators",
+        "Created Lead Management System (CRM) increasing sales conversions by 25%",
+        "Managed AWS EC2 instances, Nginx reverse proxies, and PM2 process management"
+      ]
+    },
+    {
+      "company": "Skolar",
+      "role": "Machine Learning & Data Science Intern",
+      "startDate": "2023",
+      "endDate": "2023",
+      "duration": "92 days",
+      "description": "Gained industry exposure in ML/AI by working on real-world data science projects. Applied statistical analysis, feature engineering, and predictive modeling techniques to extract actionable business insights from large datasets.",
+      "achievements": [
+        "Analyzed 100k+ data points using Pandas, NumPy, and Scikit-learn",
+        "Built classification models with 89% accuracy for trend prediction",
+        "Created interactive data visualizations using Matplotlib and Seaborn",
+        "Presented findings to cross-functional stakeholders"
+      ]
+    }
+  ],
+  "skills": {
+    "frontend": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "HTML5", "CSS3", "JavaScript ES6+"],
+    "backend": ["Node.js", "Express.js", "Python", "FastAPI", "REST APIs", "JWT Auth", "Middleware"],
+    "database": ["MongoDB Atlas", "Mongoose", "MySQL", "Prisma", "Redis"],
+    "devops": ["AWS EC2", "AWS S3", "Hostinger VPS", "Nginx", "PM2", "Git", "GitHub", "Docker", "CI/CD"]
+  },
+  "certifications": [
+    "Machine Learning & Data Science — Skolar (2023)",
+    "Full Stack Web Development — Self-Taught & Industry Projects"
+  ],
+  "social": [
+    {
+      "network": "GitHub",
+      "url": "https://github.com/princekushwaha"
+    },
+    {
+      "network": "LinkedIn",
+      "url": "https://linkedin.com/in/princekushwaha"
+    }
+  ]
+}
