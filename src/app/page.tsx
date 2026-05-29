@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion, useScroll, useTransform, Variants, useSpring, useInView } from "framer-motion";
-import { ArrowRight, Link2, Github, Mail, Phone, MapPin, Send, Award, Briefcase, GraduationCap, Code2, ChevronDown } from "lucide-react";
+import { ArrowRight, Link2, Github, Mail, Phone, MapPin, Send, Award, Briefcase, GraduationCap, Code2, ChevronDown, Linkedin, Star, Zap, Globe } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import resumeData from "@/data/resume.json";
@@ -109,6 +109,7 @@ function SectionDivider() {
   return (
     <div className="flex items-center justify-center py-8 relative z-10">
       <div className="w-px h-20 bg-gradient-to-b from-transparent via-primary-500/50 to-transparent" />
+      <div className="absolute w-2 h-2 rounded-full bg-primary-500/50 shadow-[0_0_12px_rgba(16,185,129,0.8)]" />
     </div>
   );
 }
@@ -168,38 +169,45 @@ export default function Home() {
       <motion.section id="home" style={{ opacity: heroOpacity, y: heroY, scale: heroScale }}
         className="relative flex min-h-screen items-center justify-center overflow-hidden pt-20">
         <div className="relative z-10 mx-auto max-w-6xl px-4 text-center">
-          <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="space-y-8">
-            <motion.div variants={fadeUp} className="inline-flex items-center rounded-full border border-primary-500/30 bg-primary-500/10 backdrop-blur-md px-5 py-2 text-sm font-medium text-primary-500 dark:text-primary-400">
-              <span className="flex w-2 h-2 rounded-full bg-primary-500 mr-2.5 animate-pulse glow-dot" />
-              Available for new opportunities
+          {/* Glass backdrop — visible in light mode to separate text from 3D bg */}
+          <div className="absolute inset-0 -mx-8 -my-12 rounded-3xl bg-white/40 dark:bg-transparent backdrop-blur-[2px] dark:backdrop-blur-none pointer-events-none" />
+          <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="relative space-y-8">
+            <motion.div variants={fadeUp} className="inline-flex items-center gap-2 rounded-full border border-primary-500/30 bg-primary-500/10 backdrop-blur-md px-5 py-2 text-sm font-medium text-primary-500 dark:text-primary-400 float-badge">
+              <span className="flex w-2 h-2 rounded-full bg-primary-500 animate-pulse glow-dot" />
+              Open to All Opportunities
+              <span className="hidden sm:inline text-primary-400/70">·</span>
+              <span className="hidden sm:inline font-mono text-xs">Remote / Hybrid / On-site</span>
             </motion.div>
 
             <h1 className="text-5xl font-extrabold tracking-tight sm:text-7xl lg:text-8xl xl:text-9xl">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 via-emerald-300 to-blue-400 animate-text-gradient block">
                 <AnimatedText text="Prince Kushwaha" />
               </span>
-              <motion.span variants={fadeUp} className="block text-2xl sm:text-3xl lg:text-4xl font-light text-gray-600 dark:text-gray-400 mt-4 tracking-wide">
+              <motion.span variants={fadeUp} className="block text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-700 dark:text-gray-400 mt-4 tracking-wide">
                 {resumeData.basics.title}
+              </motion.span>
+              <motion.span variants={fadeUp} className="block text-sm sm:text-base font-mono text-primary-600 dark:text-primary-400/60 mt-2 tracking-widest uppercase">
+                {resumeData.basics.titleAlt}
               </motion.span>
             </h1>
 
-            <motion.p variants={fadeUp} className="mx-auto max-w-2xl text-lg sm:text-xl text-gray-600 dark:text-gray-300 font-light leading-relaxed">
+            <motion.p variants={fadeUp} className="mx-auto max-w-2xl text-lg sm:text-xl text-gray-700 dark:text-gray-300 font-light leading-relaxed">
               {resumeData.basics.summary}
             </motion.p>
 
             {/* Stats Row */}
             <motion.div variants={fadeUp} className="flex flex-wrap justify-center gap-8 sm:gap-16 pt-4">
               {[
-                { value: 4, suffix: "+", label: "Production Apps" },
-                { value: 2, suffix: "+", label: "Years Experience" },
-                { value: 100, suffix: "/100", label: "Lighthouse Score" },
-                { value: 25, suffix: "%", label: "Conversion Boost" }
+                { value: 5, suffix: "+", label: "Production Systems" },
+                { value: 300, suffix: "+", label: "Daily Users" },
+                { value: 99, suffix: "%+", label: "Uptime Maintained" },
+                { value: 49, suffix: "%", label: "Effort Reduced" }
               ].map((stat, i) => (
                 <div key={i} className="text-center">
-                  <div className="text-3xl sm:text-4xl font-extrabold text-primary-600 dark:text-primary-400">
+                  <div className="text-3xl sm:text-4xl font-extrabold text-primary-600 dark:text-primary-400 stat-glow">
                     <CountUp target={stat.value} suffix={stat.suffix} />
                   </div>
-                  <p className="text-xs sm:text-sm text-gray-500 mt-1 uppercase tracking-widest font-mono">{stat.label}</p>
+                  <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-500 mt-1 uppercase tracking-widest font-mono">{stat.label}</p>
                 </div>
               ))}
             </motion.div>
@@ -211,6 +219,9 @@ export default function Home() {
               </MagneticButton>
               <MagneticButton href="#contact" className="group inline-flex w-full sm:w-auto items-center justify-center rounded-full border-2 border-primary-500/50 bg-white/5 dark:bg-black/20 backdrop-blur-md px-8 py-4 text-lg font-semibold hover:border-primary-500 hover:bg-primary-500/10 transition-all">
                 <Mail className="mr-2 h-5 w-5" /> Get In Touch
+              </MagneticButton>
+              <MagneticButton href={resumeData.social[1].url} className="group inline-flex w-full sm:w-auto items-center justify-center rounded-full border-2 border-blue-500/40 bg-blue-500/5 backdrop-blur-md px-8 py-4 text-lg font-semibold hover:border-blue-500 hover:bg-blue-500/10 transition-all text-blue-600 dark:text-blue-400">
+                <Linkedin className="mr-2 h-5 w-5" /> LinkedIn
               </MagneticButton>
             </motion.div>
           </motion.div>
@@ -231,7 +242,7 @@ export default function Home() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer}>
             <motion.div variants={fadeUp} className="flex items-center justify-center gap-3 mb-4">
               <div className="h-px w-12 bg-primary-500" />
-              <span className="text-primary-500 text-sm font-mono tracking-widest uppercase">Who I Am</span>
+              <span className="text-primary-600 dark:text-primary-500 text-sm font-mono tracking-widest uppercase">Who I Am</span>
               <div className="h-px w-12 bg-primary-500" />
             </motion.div>
             <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mb-16 text-center text-gray-900 dark:text-white">
@@ -240,7 +251,7 @@ export default function Home() {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
               <motion.div variants={slideInLeft} className="space-y-6">
-                <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">{resumeData.basics.summary}</p>
+                <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">{resumeData.basics.summary}</p>
                 
                 {/* Key Highlights */}
                 <div className="space-y-3 pt-4">
@@ -263,15 +274,17 @@ export default function Home() {
                     </div>
                     <h3 className="text-2xl font-bold text-gray-900 dark:text-white">Education</h3>
                   </div>
+                  <div className="space-y-6">
                   {resumeData.education.map((edu, i) => (
                     <div key={i} className="border-l-2 border-primary-500 pl-6 relative">
                       <div className="absolute w-3 h-3 bg-primary-500 rounded-full -left-[7px] top-1.5 shadow-[0_0_10px_rgba(16,185,129,0.8)]" />
                       <h4 className="text-xl font-semibold text-gray-900 dark:text-white">{edu.institution}</h4>
                       <p className="text-primary-600 dark:text-primary-400 font-medium mt-1">{edu.degree}</p>
-                      <p className="text-gray-500 text-sm mt-2">{edu.description}</p>
+                      {edu.cgpa && <span className="inline-block mt-1 px-2 py-0.5 bg-primary-500/10 text-primary-600 dark:text-primary-400 rounded text-xs font-bold font-mono">CGPA: {edu.cgpa}</span>}
                       <span className="text-xs text-gray-400 font-mono mt-2 block">{edu.startDate} — {edu.endDate}</span>
                     </div>
                   ))}
+                  </div>
                 </div>
 
                 {/* Certifications Card */}
@@ -285,8 +298,8 @@ export default function Home() {
                   <ul className="space-y-3">
                     {resumeData.certifications.map((cert, i) => (
                       <li key={i} className="flex items-start gap-3">
-                        <div className="w-1.5 h-1.5 rounded-full bg-primary-500 mt-2 shrink-0" />
-                        <span className="text-gray-700 dark:text-gray-300">{cert}</span>
+                        <Star className="w-4 h-4 text-primary-500 shrink-0 mt-0.5" />
+                        <span className="text-gray-700 dark:text-gray-300 text-sm">{cert}</span>
                       </li>
                     ))}
                   </ul>
@@ -305,7 +318,7 @@ export default function Home() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer}>
             <motion.div variants={fadeUp} className="flex items-center justify-center gap-3 mb-4">
               <div className="h-px w-12 bg-primary-500" />
-              <span className="text-primary-500 text-sm font-mono tracking-widest uppercase">Career</span>
+              <span className="text-primary-600 dark:text-primary-500 text-sm font-mono tracking-widest uppercase">Career</span>
               <div className="h-px w-12 bg-primary-500" />
             </motion.div>
             <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mb-20 text-center text-gray-900 dark:text-white">
@@ -363,7 +376,7 @@ export default function Home() {
             <motion.div variants={fadeUp} className="text-center max-w-3xl mx-auto mb-20">
               <div className="flex items-center justify-center gap-3 mb-4">
                 <div className="h-px w-12 bg-primary-500" />
-                <span className="text-primary-500 text-sm font-mono tracking-widest uppercase">Portfolio</span>
+                <span className="text-primary-600 dark:text-primary-500 text-sm font-mono tracking-widest uppercase">Portfolio</span>
                 <div className="h-px w-12 bg-primary-500" />
               </div>
               <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mb-6 text-gray-900 dark:text-white">
@@ -382,9 +395,10 @@ export default function Home() {
                     <Image src={project.image} alt={project.title} fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent z-10" />
                     
-                    <h3 className="absolute bottom-5 left-6 right-6 z-20 text-white font-bold text-2xl sm:text-3xl tracking-tight">
-                      {project.title}
-                    </h3>
+                    <div className="absolute bottom-5 left-6 right-6 z-20">
+                      <h3 className="text-white font-bold text-2xl sm:text-3xl tracking-tight">{project.title}</h3>
+                      {(project as any).subtitle && <p className="text-white/60 text-xs font-mono mt-1 truncate">{(project as any).subtitle}</p>}
+                    </div>
 
                     <div className="absolute top-5 right-5 z-20 flex gap-2 translate-y-[-20px] opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
                       {project.githubLink !== "#" && (
@@ -401,7 +415,12 @@ export default function Home() {
                   </div>
                   
                   <div className="p-6 sm:p-8 flex flex-col flex-grow">
-                    <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed flex-grow">{project.description}</p>
+                    {(project as any).badge && (
+                    <span className="inline-flex items-center gap-1.5 mb-3 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 text-xs font-bold font-mono">
+                      <Zap className="w-3 h-3" />{(project as any).badge}
+                    </span>
+                  )}
+                  <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed flex-grow">{project.description}</p>
 
                     <div className="flex flex-wrap gap-2 mb-6">
                       {project.techStack.map((tech, idx) => (
@@ -437,7 +456,7 @@ export default function Home() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer}>
             <motion.div variants={fadeUp} className="flex items-center justify-center gap-3 mb-4">
               <div className="h-px w-12 bg-primary-500" />
-              <span className="text-primary-500 text-sm font-mono tracking-widest uppercase">Expertise</span>
+              <span className="text-primary-600 dark:text-primary-500 text-sm font-mono tracking-widest uppercase">Expertise</span>
               <div className="h-px w-12 bg-primary-500" />
             </motion.div>
             <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mb-20 text-center text-gray-900 dark:text-white">
@@ -449,7 +468,7 @@ export default function Home() {
                 { title: "Frontend", icon: Code2, data: resumeData.skills.frontend, gradient: "from-blue-500 to-cyan-400" },
                 { title: "Backend", icon: Briefcase, data: resumeData.skills.backend, gradient: "from-emerald-500 to-teal-400" },
                 { title: "Database", icon: Award, data: resumeData.skills.database, gradient: "from-purple-500 to-pink-400" },
-                { title: "DevOps", icon: Send, data: resumeData.skills.devops, gradient: "from-orange-500 to-amber-400" }
+                { title: "DevOps & Tools", icon: Globe, data: resumeData.skills.devops, gradient: "from-orange-500 to-amber-400" }
               ].map((category, idx) => (
                 <motion.div key={idx} variants={scaleIn}
                   className="bg-card/80 backdrop-blur-xl rounded-3xl p-7 border border-white/10 shadow-lg hover:-translate-y-2 hover:shadow-xl hover:border-primary-500/30 transition-all duration-300 group">
@@ -470,6 +489,29 @@ export default function Home() {
                 </motion.div>
               ))}
             </div>
+
+            {/* Core Competencies */}
+            <motion.div variants={fadeUp} className="mt-12">
+              <div className="bg-card/60 backdrop-blur-xl rounded-3xl p-8 border border-white/10 shadow-xl hover:border-primary-500/20 transition-all duration-500">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-10 h-10 bg-gradient-to-br from-amber-500 to-orange-400 rounded-xl flex items-center justify-center shadow-lg">
+                    <Star className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white">Core Competencies</h3>
+                    <p className="text-xs text-gray-500 font-mono">Project Ownership · Operations · Management</p>
+                  </div>
+                </div>
+                <div className="flex flex-wrap gap-3">
+                  {resumeData.competencies.projectManagement.map((comp, i) => (
+                    <motion.span key={i} whileHover={{ scale: 1.06 }}
+                      className="px-4 py-2 bg-gradient-to-r from-amber-500/10 to-orange-400/10 border border-amber-500/20 rounded-full text-sm font-semibold text-amber-700 dark:text-amber-300 hover:from-amber-500/20 hover:to-orange-400/20 transition-all cursor-default">
+                      {comp}
+                    </motion.span>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -483,7 +525,7 @@ export default function Home() {
             <motion.div variants={fadeUp} className="text-center mb-16">
               <div className="flex items-center justify-center gap-3 mb-4">
                 <div className="h-px w-12 bg-primary-500" />
-                <span className="text-primary-500 text-sm font-mono tracking-widest uppercase">Contact</span>
+                <span className="text-primary-600 dark:text-primary-500 text-sm font-mono tracking-widest uppercase">Contact</span>
                 <div className="h-px w-12 bg-primary-500" />
               </div>
               <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-4 text-gray-900 dark:text-white">
@@ -507,7 +549,9 @@ export default function Home() {
                   {[
                     { icon: Mail, label: "Email", value: resumeData.basics.email, href: `mailto:${resumeData.basics.email}` },
                     { icon: Phone, label: "Phone", value: resumeData.basics.phone, href: `tel:${resumeData.basics.phone}` },
-                    { icon: MapPin, label: "Location", value: resumeData.basics.location, href: null }
+                    { icon: MapPin, label: "Location", value: resumeData.basics.locationAlt, href: null },
+                    { icon: Linkedin, label: "LinkedIn", value: "prince-kushwaha", href: resumeData.social[1].url },
+                    { icon: Github, label: "GitHub", value: "princekushwaha", href: resumeData.social[0].url }
                   ].map((c, idx) => (
                     <motion.div key={idx} whileHover={{ x: 8 }} className="flex items-center group">
                       <div className="flex-shrink-0 w-14 h-14 bg-white dark:bg-white/5 border border-black/5 dark:border-white/10 rounded-2xl flex items-center justify-center mr-5 group-hover:bg-primary-500 group-hover:border-primary-500 transition-all duration-300 shadow-sm">

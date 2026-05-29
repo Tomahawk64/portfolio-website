@@ -36,7 +36,7 @@ function TerrainWave() {
   return (
     <mesh ref={meshRef} position={[0, -4, -3]} rotation={[-Math.PI / 2.5, 0, 0]}>
       <planeGeometry ref={geoRef} args={[40, 40, 48, 48]} />
-      <meshBasicMaterial color={color} wireframe transparent opacity={0.08} />
+      <meshBasicMaterial color={color} wireframe transparent opacity={resolvedTheme === "dark" ? 0.08 : 0.04} />
     </mesh>
   );
 }
@@ -82,7 +82,7 @@ function FloatingSymbols() {
             {shape.type === 1 && <boxGeometry args={[1, 1, 1]} />}
             {shape.type === 2 && <torusGeometry args={[1, 0.3, 8, 16]} />}
             {shape.type === 3 && <dodecahedronGeometry args={[1, 0]} />}
-            <meshBasicMaterial color={colors[shape.type]} wireframe transparent opacity={0.15} />
+            <meshBasicMaterial color={colors[shape.type]} wireframe transparent opacity={resolvedTheme === "dark" ? 0.15 : 0.05} />
           </mesh>
         </Float>
       ))}
@@ -109,12 +109,12 @@ function GeometricCore() {
     <group ref={groupRef} position={[0, 0, 0]}>
       <Float speed={2} rotationIntensity={2} floatIntensity={2}>
         <TorusKnot args={[1.5, 0.4, 128, 16]}>
-          <meshBasicMaterial color={color} wireframe transparent opacity={0.12} />
+          <meshBasicMaterial color={color} wireframe transparent opacity={resolvedTheme === "dark" ? 0.12 : 0.04} />
         </TorusKnot>
       </Float>
       <Float speed={3} rotationIntensity={1.5} floatIntensity={1}>
         <Octahedron args={[0.7, 0]}>
-          <meshStandardMaterial color={innerColor} roughness={0.3} metalness={0.9} transparent opacity={0.7} />
+          <meshStandardMaterial color={innerColor} roughness={0.3} metalness={0.9} transparent opacity={resolvedTheme === "dark" ? 0.7 : 0.08} />
         </Octahedron>
       </Float>
     </group>
@@ -141,10 +141,11 @@ function ParticleField() {
         <PointMaterial
           transparent
           color={pointColor}
-          size={0.012}
+          size={resolvedTheme === "dark" ? 0.012 : 0.007}
           sizeAttenuation
           depthWrite={false}
           blending={THREE.AdditiveBlending}
+          opacity={resolvedTheme === "dark" ? 1 : 0.4}
         />
       </Points>
     </group>
@@ -167,7 +168,7 @@ export default function Background3D() {
           <FloatingSymbols />
           <GeometricCore />
           <ParticleField />
-          <Stars radius={60} depth={60} count={4000} factor={4} saturation={0} fade speed={1} />
+          <Stars radius={60} depth={60} count={resolvedTheme === "dark" ? 4000 : 800} factor={4} saturation={0} fade speed={1} />
         </Suspense>
       </Canvas>
     </div>

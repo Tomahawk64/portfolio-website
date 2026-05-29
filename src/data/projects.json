@@ -1,58 +1,66 @@
 [
   {
-    "id": "rg-consultancy",
-    "title": "RG Consultancy Website",
-    "description": "Corporate website for Reddington Global Consultancy featuring dynamic content, service showcases, SEO-optimized pages, and a modern aesthetic with Framer Motion animations.",
-    "techStack": ["Next.js", "Tailwind CSS", "Framer Motion", "MongoDB"],
-    "liveLink": "#",
+    "id": "enterprise-hrms",
+    "title": "Enterprise HRMS",
+    "subtitle": "rgstaff.reddington.global.com",
+    "description": "End-to-end Human Resource Management System covering attendance, payroll, leave management, and employee records — replacing all manual HR operations across departments. Coordinated biometric hardware integration with phased rollout across 300+ users.",
+    "techStack": ["Next.js", "Node.js", "MongoDB", "Express", "AWS EC2", "NGINX"],
+    "liveLink": "https://rgstaff.reddington.global.com",
     "githubLink": "#",
     "image": "/images/projects/rg-consultancy.png",
+    "badge": "Production · 300+ Active Users",
     "caseStudy": {
-      "problem": "The firm needed a modern, performant web presence to attract enterprise clients and establish credibility in the consulting space.",
-      "solution": "Built a static site generated multi-page application using Next.js with ISR, improving loading times by 40% and achieving perfect Lighthouse scores.",
-      "metrics": ["40% faster load time", "100/100 Lighthouse", "SEO-optimized", "Mobile responsive"]
-    }
-  },
-  {
-    "id": "rg-care",
-    "title": "RG Care (NGO Platform)",
-    "description": "Full-featured donation and volunteer management platform for the RG Care non-profit organization, with secure payment processing, real-time dashboards, and transparent expense tracking.",
-    "techStack": ["React", "Node.js", "Express", "MongoDB", "Stripe"],
-    "liveLink": "#",
-    "githubLink": "#",
-    "image": "/images/projects/rg-care.png",
-    "caseStudy": {
-      "problem": "Inefficient tracking of volunteer hours, donations, and organizational expenses across multiple spreadsheets.",
-      "solution": "Created a centralized dashboard with automated reports, secure Stripe payment gateways, and volunteer management tools.",
-      "metrics": ["$50k+ donations", "200+ volunteers", "Real-time reports", "Secure payments"]
-    }
-  },
-  {
-    "id": "rg-us-debt",
-    "title": "RG US Debt Advisory",
-    "description": "Financial advisory portal offering intelligent debt management solutions for US clients, featuring complex calculator APIs powered by Python/FastAPI and consumed by a responsive Next.js frontend.",
-    "techStack": ["Next.js", "TypeScript", "Tailwind CSS", "FastAPI", "Python"],
-    "liveLink": "#",
-    "githubLink": "#",
-    "image": "/images/projects/rg-us-debt.png",
-    "caseStudy": {
-      "problem": "Clients needed an intuitive simulator to restructure their debts and visualize repayment plans before committing.",
-      "solution": "Developed complex Python-based financial calculator APIs exposed via FastAPI with sub-200ms response times, consumed by a sleek Next.js frontend.",
-      "metrics": ["<200ms calculations", "50+ active clients", "99.9% uptime", "Real-time plans"]
+      "problem": "All HR operations — attendance, payroll, leave approvals — were handled manually via spreadsheets, causing errors and delays.",
+      "solution": "Designed and delivered a full HRMS with biometric hardware integration, role-based dashboards, and automated payroll generation.",
+      "metrics": ["300+ Active Users", "0 Manual HR Ops", "99%+ Uptime", "Biometric Integration"]
     }
   },
   {
     "id": "lms",
     "title": "Lead Management System",
-    "description": "Enterprise-grade internal CRM tool optimized for tele-calling teams, improving conversion rates by tracking leads through customizable Kanban-style pipelines with real-time notifications.",
-    "techStack": ["React", "Express", "MySQL", "AWS EC2", "Nginx", "PM2"],
-    "liveLink": "#",
+    "subtitle": "oliviams.cloud",
+    "description": "Scalable multi-role lead tracking platform for tele-calling teams built with a phased rollout. Reduced manual tracking effort by 40% through workflow automation, structured process documentation, and real-time status pipelines.",
+    "techStack": ["React", "Express", "MySQL", "AWS EC2", "NGINX", "PM2"],
+    "liveLink": "https://oliviams.cloud",
     "githubLink": "#",
     "image": "/images/projects/lms.png",
+    "badge": "Production · 100+ Active Users",
     "caseStudy": {
-      "problem": "Sales team was losing track of potential leads due to fragmented spreadsheet workflows and no standardized follow-up process.",
-      "solution": "Deployed a robust CRM on AWS EC2 with Nginx reverse proxy, integrating real-time notifications, role-based access, and a scalable MySQL schema.",
-      "metrics": ["25% more conversions", "Zero downtime", "Role-based access", "Real-time alerts"]
+      "problem": "Sales team was losing leads due to fragmented spreadsheet workflows and no standardised follow-up or escalation process.",
+      "solution": "Deployed a CRM on AWS EC2 with phased rollout, role-based access, real-time notifications, and workflow automation.",
+      "metrics": ["40% Less Manual Work", "100+ Active Users", "Role-based Access", "Phased Rollout"]
+    }
+  },
+  {
+    "id": "rg-websites",
+    "title": "3 Production Websites",
+    "subtitle": "reddington.global.com · rgcare.in · rgdebtrelief.com",
+    "description": "Planned and tracked simultaneous delivery of 3 live corporate sites — Reddington Global (consultancy), RG Care (NGO platform), and RG US Debt Relief (financial advisory). Managed project risks and quality outcomes, sharing regular progress reports with stakeholders.",
+    "techStack": ["Next.js", "Tailwind CSS", "FastAPI", "Python", "MongoDB", "Framer Motion"],
+    "liveLink": "https://reddington.global.com",
+    "githubLink": "#",
+    "image": "/images/projects/rg-care.png",
+    "badge": "Production · 99%+ Uptime",
+    "caseStudy": {
+      "problem": "The organisation needed 3 distinct digital presences — corporate, NGO, and financial — all delivered in parallel with shared infrastructure.",
+      "solution": "Coordinated design, development, and deployment across 3 websites simultaneously, maintaining quality and timeline parity for all.",
+      "metrics": ["3 Sites Delivered", "99%+ Uptime", "On-time Delivery", "SEO Optimised"]
+    }
+  },
+  {
+    "id": "ml-pipeline",
+    "title": "ML Data Pipeline & Insights",
+    "subtitle": "Skolar Internship Project · Apr – Jun 2024",
+    "description": "Built structured data pipelines and analytical reporting systems during a 92-day internship. Applied Pandas, NumPy, and Scikit-learn to transform raw datasets into actionable business intelligence, with interactive visualisations presented to stakeholders.",
+    "techStack": ["Python", "Pandas", "NumPy", "Scikit-learn", "Matplotlib", "Seaborn"],
+    "liveLink": "#",
+    "githubLink": "#",
+    "image": "/images/projects/rg-us-debt.png",
+    "badge": "Internship · 92 Days",
+    "caseStudy": {
+      "problem": "Raw operational data sat in siloed files with no structured way to extract trends or actionable insights for business decisions.",
+      "solution": "Built automated pipelines and classification models, producing visualised reports used directly in stakeholder decision-making.",
+      "metrics": ["Data Pipeline Built", "Classification Models", "Stakeholder Reports", "Remote Teamwork"]
     }
   }
 ]

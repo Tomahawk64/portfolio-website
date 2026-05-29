@@ -11,8 +11,15 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const Background3D = dynamic(() => import("@/components/Background3D"), { ssr: false });
 
 export const metadata: Metadata = {
-  title: "Prince Kushwaha | Full Stack Developer",
-  description: "Portfolio of Prince Kushwaha, Full Stack Developer.",
+  title: "Prince Kushwaha | Full Stack Developer & Project Management",
+  description: "Portfolio of Prince Kushwaha — Full Stack Developer & Project Management. 5 production systems, 300+ daily users, 99%+ uptime. Open to all opportunities. Remote / Hybrid / On-site.",
+  keywords: ["Prince Kushwaha", "Full Stack Developer", "Project Manager", "React", "Next.js", "Node.js", "Portfolio", "Gurugram", "Delhi"],
+  authors: [{ name: "Prince Kushwaha", url: "https://princekushwaha.dev" }],
+  openGraph: {
+    title: "Prince Kushwaha | Full Stack Developer & Project Manager",
+    description: "5 production systems · 300+ daily users · 99%+ uptime · Open to all opportunities",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
